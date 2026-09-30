@@ -1,0 +1,168 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}
+    Completar revisión del PAyV | IA-GON
+{% endblock %}
+
+
+{% block breadcrumbs %}
+
+<div class="breadcrumbs">
+
+    <a href="{% url 'admin:index' %}">
+        Inicio
+    </a>
+
+    &rsaquo;
+
+    <a href="{% url 'admin:gestion_revisionpayv_changelist' %}">
+        Revisiones del PAyV
+    </a>
+
+    &rsaquo;
+
+    Completar revisión
+
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div id="content-main">
+
+    <div
+        style="
+            background: #f6f7f7;
+            border: 1px solid #d8d8d8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            max-width: 900px;
+        "
+    >
+
+        <p>
+            <strong>Residente:</strong>
+            {{ revision.payv.residente.nombre }}
+            {{ revision.payv.residente.apellidos }}
+        </p>
+
+        <p>
+            <strong>Sección:</strong>
+            {{ revision.seccion }}
+        </p>
+
+        <p>
+            <strong>Estado actual:</strong>
+            {{ revision.get_estado_display }}
+        </p>
+
+        <p>
+            <strong>Motivo de la revisión:</strong><br>
+            {{ revision.motivo }}
+        </p>
+
+        {% if revision.acontecimiento %}
+            <p style="margin-bottom: 0;">
+                <strong>Acontecimiento relacionado:</strong><br>
+                {{ revision.acontecimiento }}
+            </p>
+        {% endif %}
+
+    </div>
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <input
+            type="hidden"
+            name="action"
+            value="accion_completar_revision"
+        >
+
+        <input
+            type="hidden"
+            name="_selected_action"
+            value="{{ revision.pk }}"
+        >
+
+        <input
+            type="hidden"
+            name="confirmar_completado"
+            value="1"
+        >
+
+
+        <fieldset
+            class="module aligned"
+            style="max-width: 900px;"
+        >
+
+            <div class="form-row">
+
+                <div>
+
+                    {{ form.conclusion.errors }}
+
+                    <label
+                        for="{{ form.conclusion.id_for_label }}"
+                        class="required"
+                    >
+                        Conclusión de la revisión:
+                    </label>
+
+                    {{ form.conclusion }}
+
+                    {% if form.conclusion.help_text %}
+                        <div class="help">
+                            {{ form.conclusion.help_text }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </fieldset>
+
+
+        {% if form.non_field_errors %}
+            <div class="errornote">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+
+        <div
+            class="submit-row"
+            style="max-width: 900px;"
+        >
+
+            <input
+                type="submit"
+                value="Completar revisión"
+                class="default"
+            >
+
+            <a
+                href="{% url 'admin:gestion_revisionpayv_changelist' %}"
+                class="button cancel-link"
+                style="
+                    margin-left: 10px;
+                    padding: 10px 15px;
+                "
+            >
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

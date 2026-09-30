@@ -1,0 +1,244 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}
+    Actualizar contenido del PAyV | IA-GON
+{% endblock %}
+
+
+{% block breadcrumbs %}
+
+<div class="breadcrumbs">
+
+    <a href="{% url 'admin:index' %}">
+        Inicio
+    </a>
+
+    &rsaquo;
+
+    <a href="{% url 'admin:gestion_revisionpayv_changelist' %}">
+        Revisiones del PAyV
+    </a>
+
+    &rsaquo;
+
+    Actualizar contenido
+
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div id="content-main">
+
+    <h1>Actualizar contenido del PAyV</h1>
+
+
+    <div
+        style="
+            background: #f6f7f7;
+            border: 1px solid #d8d8d8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            max-width: 900px;
+        "
+    >
+
+        <p>
+            <strong>Residente:</strong>
+            {{ revision.payv.residente.nombre }}
+            {{ revision.payv.residente.apellidos }}
+        </p>
+
+        <p>
+            <strong>Sección:</strong>
+            {{ revision.seccion }}
+        </p>
+
+        <p>
+            <strong>Estado de la revisión:</strong>
+            {{ revision.get_estado_display }}
+        </p>
+
+        {% if revision.acontecimiento %}
+
+            <p>
+                <strong>Acontecimiento relacionado:</strong>
+                {{ revision.acontecimiento }}
+            </p>
+
+        {% endif %}
+
+        <p style="margin-bottom: 0;">
+            <strong>Motivo de la revisión:</strong><br>
+            {{ revision.motivo }}
+        </p>
+
+    </div>
+
+
+    <div
+        style="
+            max-width: 900px;
+            margin-bottom: 25px;
+        "
+    >
+
+        <h2>Contenido actual</h2>
+
+        {% if contenido_actual %}
+
+            <div
+                style="
+                    background: white;
+                    border: 1px solid #d8d8d8;
+                    border-radius: 8px;
+                    padding: 18px;
+                    line-height: 1.6;
+                "
+            >
+                {{ contenido_actual.contenido|linebreaksbr }}
+            </div>
+
+        {% else %}
+
+            <div
+                style="
+                    background: #f6f7f7;
+                    border: 1px solid #d8d8d8;
+                    border-radius: 8px;
+                    padding: 18px;
+                    color: #666;
+                "
+            >
+                Esta sección todavía no tiene contenido
+                registrado en el PAyV.
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <input
+            type="hidden"
+            name="action"
+            value="accion_actualizar_contenido"
+        >
+
+        <input
+            type="hidden"
+            name="_selected_action"
+            value="{{ revision.pk }}"
+        >
+
+        <input
+            type="hidden"
+            name="confirmar_actualizacion"
+            value="1"
+        >
+
+
+        <fieldset
+            class="module aligned"
+            style="max-width: 900px;"
+        >
+
+            <div class="form-row">
+
+                <div>
+
+                    {{ form.nuevo_contenido.errors }}
+
+                    <label
+                        for="{{ form.nuevo_contenido.id_for_label }}"
+                        class="required"
+                    >
+                        Nuevo contenido:
+                    </label>
+
+                    {{ form.nuevo_contenido }}
+
+                    {% if form.nuevo_contenido.help_text %}
+                        <div class="help">
+                            {{ form.nuevo_contenido.help_text }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div>
+
+                    {{ form.motivo.errors }}
+
+                    <label
+                        for="{{ form.motivo.id_for_label }}"
+                        class="required"
+                    >
+                        Motivo del cambio:
+                    </label>
+
+                    {{ form.motivo }}
+
+                    {% if form.motivo.help_text %}
+                        <div class="help">
+                            {{ form.motivo.help_text }}
+                        </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </fieldset>
+
+
+        {% if form.non_field_errors %}
+
+            <div class="errornote">
+                {{ form.non_field_errors }}
+            </div>
+
+        {% endif %}
+
+
+        <div
+            class="submit-row"
+            style="max-width: 900px;"
+        >
+
+            <input
+                type="submit"
+                value="Guardar actualización"
+                class="default"
+            >
+
+            <a
+                href="{% url 'admin:gestion_revisionpayv_changelist' %}"
+                class="button cancel-link"
+                style="
+                    margin-left: 10px;
+                    padding: 10px 15px;
+                "
+            >
+                Cancelar
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

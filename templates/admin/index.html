@@ -1,0 +1,200 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static iagon_dashboard %}
+
+{% block content_title %}{% endblock %}
+
+{% block content %}
+
+{% datos_dashboard as datos %}
+
+<div class="iagon-dashboard">
+
+    <div class="iagon-dashboard-header">
+        <h1>Seguimiento IA-GON</h1>
+
+        <p>
+            Vista general de residentes, profesionales,
+            Planes de Atención y Vida y revisiones activas.
+        </p>
+    </div>
+
+
+    <!-- ==================================================
+         INDICADORES GENERALES
+         ================================================== -->
+
+    <div class="iagon-dashboard-cards">
+
+        <div class="iagon-dashboard-card">
+            <span class="iagon-dashboard-number">
+                {{ datos.residentes_activos }}
+            </span>
+            <span class="iagon-dashboard-label">
+                Residentes activos
+            </span>
+        </div>
+
+        <div class="iagon-dashboard-card">
+            <span class="iagon-dashboard-number">
+                {{ datos.profesionales_activos }}
+            </span>
+            <span class="iagon-dashboard-label">
+                Profesionales
+            </span>
+        </div>
+
+        <div class="iagon-dashboard-card">
+            <span class="iagon-dashboard-number">
+                {{ datos.unidades_activas }}
+            </span>
+            <span class="iagon-dashboard-label">
+                Unidades convivenciales
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         ESTADO DE LOS PAyV
+         ================================================== -->
+
+    <div class="iagon-dashboard-section">
+
+        <h2>Estado de los PAyV</h2>
+
+        <div class="iagon-status-grid">
+
+            <div class="iagon-status-item">
+                <span class="iagon-status-dot verde">●</span>
+                <strong>{{ datos.actualizados }}</strong>
+                <span>Actualizados</span>
+            </div>
+
+            <div class="iagon-status-item">
+                <span class="iagon-status-dot rojo">●</span>
+                <strong>{{ datos.requieren_revision }}</strong>
+                <span>Requieren revisión</span>
+            </div>
+
+            <div class="iagon-status-item">
+                <span class="iagon-status-dot naranja">●</span>
+                <strong>{{ datos.en_revision }}</strong>
+                <span>En revisión</span>
+            </div>
+
+            <div class="iagon-status-item">
+                <span class="iagon-status-dot azul">●</span>
+                <strong>{{ datos.en_elaboracion }}</strong>
+                <span>En elaboración</span>
+            </div>
+
+            <div class="iagon-status-item">
+                <span class="iagon-status-dot gris">●</span>
+                <strong>{{ datos.sin_contenido }}</strong>
+                <span>Sin contenido</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         REVISIONES
+         ================================================== -->
+
+    <div class="iagon-dashboard-section">
+
+        <h2>Revisiones activas</h2>
+
+        <div class="iagon-dashboard-cards iagon-dashboard-cards-small">
+
+            <div class="iagon-dashboard-card">
+                <span class="iagon-dashboard-number">
+                    {{ datos.revisiones_pendientes }}
+                </span>
+                <span class="iagon-dashboard-label">
+                    Pendientes
+                </span>
+            </div>
+
+            <div class="iagon-dashboard-card">
+                <span class="iagon-dashboard-number">
+                    {{ datos.revisiones_en_revision }}
+                </span>
+                <span class="iagon-dashboard-label">
+                    En revisión
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         MÓDULOS DEL ADMIN
+         ================================================== -->
+
+    <div class="iagon-dashboard-section">
+
+        <h2>Gestión</h2>
+
+        {% if app_list %}
+
+            {% for app in app_list %}
+
+                <div class="module iagon-admin-module">
+
+                    <table>
+                        <caption>
+                            {{ app.name }}
+                        </caption>
+
+                        {% for model in app.models %}
+
+                            <tr class="model-{{ model.object_name|lower }}">
+
+                                <th scope="row">
+
+                                    {% if model.admin_url %}
+                                        <a href="{{ model.admin_url }}">
+                                            {{ model.name }}
+                                        </a>
+                                    {% else %}
+                                        {{ model.name }}
+                                    {% endif %}
+
+                                </th>
+
+                                <td>
+
+                                    {% if model.add_url %}
+                                        <a
+                                            href="{{ model.add_url }}"
+                                            class="addlink"
+                                        >
+                                            Añadir
+                                        </a>
+                                    {% endif %}
+
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </table>
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

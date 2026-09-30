@@ -1,0 +1,348 @@
+[
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 1,
+    "fields": {
+      "codigo": "QUIEN_SOY_HISTORIA",
+      "bloque": "QUIEN_SOY",
+      "categoria": "",
+      "titulo": "Mi historia",
+      "orden": 10,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 2,
+    "fields": {
+      "codigo": "QUIEN_SOY_FORTALEZAS",
+      "bloque": "QUIEN_SOY",
+      "categoria": "",
+      "titulo": "Mis fortalezas y capacidades",
+      "orden": 20,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 3,
+    "fields": {
+      "codigo": "QUIEN_SOY_PERSONAS",
+      "bloque": "QUIEN_SOY",
+      "categoria": "",
+      "titulo": "Personas importantes para mí",
+      "orden": 30,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 4,
+    "fields": {
+      "codigo": "QUIEN_SOY_INTERESES",
+      "bloque": "QUIEN_SOY",
+      "categoria": "",
+      "titulo": "Mis aficiones e intereses",
+      "orden": 40,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 5,
+    "fields": {
+      "codigo": "QUE_QUIERO_IMPORTANTE",
+      "bloque": "QUE_QUIERO_NECESITO",
+      "categoria": "",
+      "titulo": "Lo que ahora es importante para mí",
+      "orden": 10,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 6,
+    "fields": {
+      "codigo": "QUE_QUIERO_NECESITO_APOYOS",
+      "bloque": "QUE_QUIERO_NECESITO",
+      "categoria": "",
+      "titulo": "Qué necesito",
+      "orden": 20,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 7,
+    "fields": {
+      "codigo": "QUE_QUIERO_BIENESTAR",
+      "bloque": "QUE_QUIERO_NECESITO",
+      "categoria": "",
+      "titulo": "Lo que me hace sentir bien",
+      "orden": 30,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 8,
+    "fields": {
+      "codigo": "QUE_QUIERO_MALESTAR",
+      "bloque": "QUE_QUIERO_NECESITO",
+      "categoria": "",
+      "titulo": "Lo que me preocupa o me hace sentir mal",
+      "orden": 40,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 9,
+    "fields": {
+      "codigo": "COMO_QUIERO_EMPEZAR_RUTINA",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Empezar el día",
+      "titulo": "Mi rutina",
+      "orden": 10,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 10,
+    "fields": {
+      "codigo": "COMO_QUIERO_EMPEZAR_APOYO",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Empezar el día",
+      "titulo": "Necesito apoyo en",
+      "orden": 20,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 11,
+    "fields": {
+      "codigo": "COMO_QUIERO_EMPEZAR_ANIMAME",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Empezar el día",
+      "titulo": "Anímame a",
+      "orden": 30,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 12,
+    "fields": {
+      "codigo": "COMO_QUIERO_EMPEZAR_CUIDADOS",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Empezar el día",
+      "titulo": "Otros cuidados",
+      "orden": 40,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 13,
+    "fields": {
+      "codigo": "COMO_QUIERO_EMPEZAR_RIESGOS",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Empezar el día",
+      "titulo": "Riesgos",
+      "orden": 50,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 14,
+    "fields": {
+      "codigo": "COMO_QUIERO_PASAR_DIA_RUTINA",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Pasar el día",
+      "titulo": "Mi rutina",
+      "orden": 60,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 15,
+    "fields": {
+      "codigo": "COMO_QUIERO_PASAR_DIA_APOYO",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Pasar el día",
+      "titulo": "Necesito apoyo en",
+      "orden": 70,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 16,
+    "fields": {
+      "codigo": "COMO_QUIERO_PASAR_DIA_ANIMAME",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Pasar el día",
+      "titulo": "Anímame a",
+      "orden": 80,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 17,
+    "fields": {
+      "codigo": "COMO_QUIERO_COMER_RUTINA",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Comer",
+      "titulo": "Mi rutina",
+      "orden": 90,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 18,
+    "fields": {
+      "codigo": "COMO_QUIERO_COMER_APOYO",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Comer",
+      "titulo": "Necesito apoyo en",
+      "orden": 100,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 19,
+    "fields": {
+      "codigo": "COMO_QUIERO_COMER_PREFERENCIAS",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Comer",
+      "titulo": "Mis preferencias",
+      "orden": 110,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 20,
+    "fields": {
+      "codigo": "COMO_QUIERO_ACOSTARME_RUTINA",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Acostarme",
+      "titulo": "Mi rutina",
+      "orden": 120,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 21,
+    "fields": {
+      "codigo": "COMO_QUIERO_ACOSTARME_APOYO",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Acostarme",
+      "titulo": "Necesito apoyo en",
+      "orden": 130,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 22,
+    "fields": {
+      "codigo": "COMO_QUIERO_NOCHE_RUTINA",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Pasar la noche",
+      "titulo": "Mi rutina",
+      "orden": 140,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 23,
+    "fields": {
+      "codigo": "COMO_QUIERO_NOCHE_APOYO",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Pasar la noche",
+      "titulo": "Necesito apoyo en",
+      "orden": 150,
+      "permite_multiples": false,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 24,
+    "fields": {
+      "codigo": "COMO_QUIERO_OTRAS_COSAS",
+      "bloque": "COMO_QUIERO",
+      "categoria": "Otras cosas importantes para mí",
+      "titulo": "Otras cosas importantes para mí",
+      "orden": 160,
+      "permite_multiples": true,
+      "activa": true
+    }
+  },
+
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 25,
+    "fields": {
+      "codigo": "ME_ENCANTARIA_META",
+      "bloque": "ME_ENCANTARIA",
+      "categoria": "",
+      "titulo": "Me encantaría...",
+      "orden": 10,
+      "permite_multiples": true,
+      "activa": true
+    }
+  },
+  {
+    "model": "gestion.seccionpayv",
+    "pk": 26,
+    "fields": {
+      "codigo": "ME_ENCANTARIA_APOYO",
+      "bloque": "ME_ENCANTARIA",
+      "categoria": "",
+      "titulo": "Apoyos que necesito",
+      "orden": 20,
+      "permite_multiples": true,
+      "activa": true
+    }
+  }
+]

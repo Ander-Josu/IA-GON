@@ -1,0 +1,23 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}
+    IA-GON
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            IA-GON
+        </a>
+    </h1>
+{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+
+    <link
+        rel="stylesheet"
+        href="{% static 'admin/css/custom_admin.css' %}?v=6"
+    >
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+<h1>Añadir contenido inicial al PAyV</h1>
+
+<p>
+    <strong>Residente:</strong>
+    {{ payv.residente }}
+</p>
+
+<p>
+    Este contenido forma parte de la elaboración inicial del PAyV.
+    La autoría y la fecha quedarán registradas automáticamente.
+</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input
+        type="hidden"
+        name="action"
+        value="accion_anadir_contenido_inicial"
+    >
+
+    <input
+        type="hidden"
+        name="_selected_action"
+        value="{{ payv.pk }}"
+    >
+
+    <input
+        type="hidden"
+        name="confirmar_contenido_inicial"
+        value="1"
+    >
+
+    <div class="submit-row">
+        <input
+            type="submit"
+            value="Guardar contenido"
+            class="default"
+        >
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+<h1>Finalizar elaboración inicial</h1>
+
+<p>
+    <strong>Residente:</strong>
+    {{ payv.residente }}
+</p>
+
+<p>
+    Al finalizar la elaboración inicial, el PAyV pasará a
+    considerarse actualizado.
+</p>
+
+<p>
+    A partir de ese momento, las modificaciones posteriores
+    deberán realizarse mediante el proceso de revisión.
+</p>
+
+<p>
+    <strong>
+        Esta acción representa el cierre de la elaboración inicial.
+    </strong>
+</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input
+        type="hidden"
+        name="action"
+        value="accion_finalizar_elaboracion_inicial"
+    >
+
+    <input
+        type="hidden"
+        name="_selected_action"
+        value="{{ payv.pk }}"
+    >
+
+    <input
+        type="hidden"
+        name="confirmar_finalizacion"
+        value="1"
+    >
+
+    <div class="submit-row">
+        <input
+            type="submit"
+            value="Finalizar elaboración inicial"
+            class="default"
+        >
+    </div>
+</form>
+
+{% endblock %}
